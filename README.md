@@ -53,6 +53,42 @@ npm run lint
 - Vite 7
 - ESLint for code quality
 
+## Deployment
+
+### Netlify Deployment
+
+This project is configured for deployment on Netlify with the following setup:
+
+**Automatic Deployment:**
+1. Connect your GitHub repository to Netlify
+2. Netlify will automatically detect the `netlify.toml` configuration
+3. Build and deployment settings are pre-configured:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node.js version: 20
+
+**Manual Deployment:**
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Build the project
+npm run build
+
+# Deploy to Netlify
+netlify deploy --prod
+```
+
+**Configuration Files:**
+- `netlify.toml` - Main Netlify configuration with build settings, redirects, and headers
+- `public/_redirects` - SPA routing support (automatically copied to dist during build)
+
+**Features:**
+- ✅ Single Page Application (SPA) routing support
+- ✅ Security headers configured
+- ✅ Static asset caching optimized
+- ✅ Node.js 20 environment
+
 ## License
 
 This project is private and not licensed for public use.
